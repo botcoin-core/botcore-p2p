@@ -4,8 +4,8 @@
 
 var should = require('chai').should();
 var utils = require('../../lib/messages/utils');
-var bitcore = require('bitcore-lib-dash');
-var BufferReader = bitcore.encoding.BufferReader;
+var botcore = require('botcore-lib');
+var BufferReader = botcore.encoding.BufferReader;
 
 describe('Message Utils', function() {
 

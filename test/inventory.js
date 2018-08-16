@@ -4,12 +4,12 @@
 
 var should = require('chai').should();
 
-var bitcore = require('bitcore-lib-dash');
+var botcore = require('botcore-lib');
 var P2P = require('../');
 var Inventory = P2P.Inventory;
-var BufferUtils = bitcore.util.buffer;
-var BufferWriter = bitcore.encoding.BufferWriter;
-var BufferReader = bitcore.encoding.BufferReader;
+var BufferUtils = botcore.util.buffer;
+var BufferWriter = botcore.encoding.BufferWriter;
+var BufferReader = botcore.encoding.BufferReader;
 
 describe('Inventory', function() {
 

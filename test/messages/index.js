@@ -7,7 +7,7 @@ var Buffers = require('node-buffers');
 var P2P = require('../../');
 var Messages = P2P.Messages;
 var messages = new Messages();
-var bitcore = require('bitcore-lib-dash');
+var botcore = require('botcore-lib');
 var Data = require('../data/messages'); //todo merge with commandData
 var commandData = require('../data/messages.json');
 
@@ -25,31 +25,31 @@ describe('Messages', function() {
 
   describe('@constructor', function() {
     it('sets properties correctly', function() {
-      var network = bitcore.Networks.defaultNetwork;
+      var network = botcore.Networks.defaultNetwork;
       var messages = new Messages({
         network: network,
-        Block: bitcore.Block,
-        Transaction: bitcore.Transaction
+        Block: botcore.Block,
+        Transaction: botcore.Transaction
       });
       should.exist(messages.builder.commands);
       should.exist(messages.builder.constructors);
-      messages.builder.constructors.Block.should.equal(bitcore.Block);
-      messages.builder.constructors.Transaction.should.equal(bitcore.Transaction);
+      messages.builder.constructors.Block.should.equal(botcore.Block);
+      messages.builder.constructors.Transaction.should.equal(botcore.Transaction);
       messages.network.should.deep.equal(network);
     });
     it('network should be unique for each set of messages', function() {
       var messages = new Messages({
-        network: bitcore.Networks.livenet
+        network: botcore.Networks.livenet
       });
       var messages2 = new Messages({
-        network: bitcore.Networks.testnet
+        network: botcore.Networks.testnet
       });
-      messages.network.should.deep.equal(bitcore.Networks.livenet);
-      messages2.network.should.deep.equal(bitcore.Networks.testnet);
+      messages.network.should.deep.equal(botcore.Networks.livenet);
+      messages2.network.should.deep.equal(botcore.Networks.testnet);
       var message1 = messages.Version();
-      message1.network.should.deep.equal(bitcore.Networks.livenet);
+      message1.network.should.deep.equal(botcore.Networks.livenet);
       var message2 = messages2.Version();
-      message2.network.should.deep.equal(bitcore.Networks.testnet);
+      message2.network.should.deep.equal(botcore.Networks.testnet);
     });
   });
 
@@ -91,7 +91,7 @@ describe('Messages', function() {
       var name = messages.builder.commandsMap[command];
       it(name, function() {
         var message = messages[name]();
-        message.network.should.deep.equal(bitcore.Networks.defaultNetwork);
+        message.network.should.deep.equal(botcore.Networks.defaultNetwork);
       });
     });
 
@@ -194,11 +194,11 @@ describe('Messages', function() {
 
   describe('#add', function() {
     it('should add a custom message', function() {
-      var network = bitcore.Networks.defaultNetwork;
+      var network = botcore.Networks.defaultNetwork;
       var messages = new Messages({
         network: network,
-        Block: bitcore.Block,
-        Transaction: bitcore.Transaction
+        Block: botcore.Block,
+        Transaction: botcore.Transaction
       });
 
       var CustomMessage = function(arg, options) {

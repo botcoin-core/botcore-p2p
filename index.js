@@ -1,4 +1,4 @@
-var bitcore = require('bitcore-lib-dash');
-bitcore.P2P = require('./lib');
+var botcore = require('botcore-lib');
+botcore.P2P = require('./lib');
 
-module.exports = bitcore.P2P;
+module.exports = botcore.P2P;

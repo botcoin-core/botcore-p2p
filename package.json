@@ -1,8 +1,8 @@
 {
-  "name": "@dashevo/dashcore-p2p",
+  "name": "@botcoin-core/botcore-p2p",
   "version": "1.1.6",
-  "description": "Interface to the dash P2P network for Dashcore",
-  "author": "BitPay <dev@bitpay.com>",
+  "description": "Interface to the botcoin P2P network for Botcoincore",
+  "author": "BitPay <dev@botcoin-core.com>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -13,27 +13,27 @@
   "contributors": [
     {
       "name": "Yemel Jardi",
-      "email": "yemel@bitpay.com"
+      "email": "yemel@botcoin-core.com"
     },
     {
       "name": "Braydon Fuller",
-      "email": "braydon@bitpay.com"
+      "email": "braydon@botcoin-core.com"
     },
     {
       "name": "Ryan X. Charles",
-      "email": "ryan@bitpay.com"
+      "email": "ryan@botcoin-core.com"
     },
     {
       "name": "Eric Martindale",
-      "email": "eric@bitpay.com"
+      "email": "eric@botcoin-core.com"
     },
     {
       "name": "Philip Hutchins",
-      "email": "philip@bitpay.com"
+      "email": "philip@botcoin-core.com"
     },
     {
       "name": "Manuel Araoz",
-      "email": "maraoz@bitpay.com"
+      "email": "maraoz@botcoin-core.com"
     },
     {
       "name": "Esteban Ordano",
@@ -45,21 +45,21 @@
   ],
   "keywords": [
     "bitcoin",
-    "bitcore",
-    "dashcore"
+    "botcore",
+    "botcore"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dashevo/dashcore-p2p.git"
+    "url": "https://github.com/botcoin-core/botcore-p2p.git"
   },
   "dependencies": {
-    "bitcore-lib-dash": "^0.15.2",
+    "botcore-lib": "^0.15.2",
     "bloom-filter": "^0.2.0",
     "node-buffers": "^0.1.1",
     "socks5-client": "^0.3.6"
   },
   "devDependencies": {
-    "bitcore-build-dash": "dashpay/bitcore-build-dash",
+    "botcore-build": "botcoin-core/botcore-build",
     "brfs": "^1.2.0",
     "chai": "~1.10.0",
     "gulp": "^3.8.10",
